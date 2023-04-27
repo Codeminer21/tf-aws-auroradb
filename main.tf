@@ -14,9 +14,9 @@ resource "aws_rds_cluster" "cluster" {
 }
 
 resource "aws_rds_cluster_instance" "instance" {
-  count              = 2
+  count              = var.instance_count
   identifier         = "${var.db_name}-instance-${count.index}"
   cluster_identifier = "${aws_rds_cluster.cluster.id}"
-  instance_class     = "db.t3.small"
+  instance_class     = var.instance_class
   engine             = "${var.engine}"
 }

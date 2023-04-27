@@ -17,3 +17,13 @@ variable "db_username" {
 variable "db_password" {
 	description = "Senha do usuario para logar na base de dados"
 }
+
+variable "instance_count" {
+	type = number
+}
+
+variable "instance_class" {
+	type = string
+}
+
+
